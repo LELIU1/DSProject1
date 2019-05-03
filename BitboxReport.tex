@@ -1,0 +1,52 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\author{Le Liu \\leliu1@student.unimelb.edu.au \\Group name: DS4U \\ Group members: Le Liu, Ke Li, Wenyu Xie, Shun Ran}
+\date{\today \\ First created on 15 April 2019}
+\title{BitBoxReport}
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\chapter{Introduction}
+125 words descirbe: 
+\section{what the project was about}
+We build a peer which support multi-thread connection. And it try to connect all peers listed in its configuration at the beginning. Start listening on local port and construct a thread whenever there are peers applying to connect, until the maximum size reached. There's a filesystem manager that could keep monitoring a local path "share". If file or directory manipunation happend locally, the manager would report relevant event. The peer we build should make use of the event and send them to all peers that are successfully connected to. Besides, the peer would start a thread to generate synchronization that run periodically and send the system events. 
+
+At first, we don't know anything about thread and json format. All our teammates are poor in code abilities. We face great challenge to build a peer that could build multiple connection and support to be connected by multiple peers. After that, the file bytes transfer also bother us. We failed many times trying the correct format. And the synchronization on both side.
+
+Finally, despite all the obtacles, we achieved the fundamental property. Our peer could use multiple thread trying to connect to other peers and can be connected by multiple peers at the maximum number, it would refuse been connected to after the maximum number reached. We successfully realized almost all the manipulation synchronization using the uniformed protocols: File create and delete, file modify, directory create and delete. If the filesize is huge, we use blocksize to divide the file and transfer them by several times. 
+\section{what the technical challenges you faced building the system}
+\section{what outcome did you achieve}
+
+\chapter{Fault detection/tolerance/recovery}
+375 words
+\section{consider the system's ability or lack thereof}
+to recover from faults, such as IO exceptions, both locally at a peer and golbally as a distributed file system.
+
+\subsection{identify sources of faults that have the greatest impact on system}
+i.e.to disrupt it from working as intended
+\subsection{describe how the system attempts to detect/tolerate/recover from these faults, if at all}
+\subsection{suggest revisions to the protocol that may overcome these problems}
+\subsubsection{aaa}
+
+\chapter{Scalability}
+375 words
+\section{There a number of aspects of the system that present a scalability challenge}
+\subsection{identify aspects of the system that present problems for scalability}
+be specific with why it is not scalable
+\subsection{suggest revisions to the protocol that may overcome these problems}
+\chapter{Security}
+375 words. The system is designed to allow peer connections, essentially from untrusted third parties. This pose significant security problems since it is unclear whether those third party peers will operate as expected.
+\section{discuss the security issues surrounding the reading and writing of files/directories to a file in this kind of P2P systems}
+\section{how does the current system address these security problems}
+including the File System manager implementation and the protocol specification.
+\section{what more could be done to address any outstantding security problems in this regard}
+\chapter{Other Distributed System Challenges}
+375 words
+\section{Choose a third distributed system challenge that relates to}
+the system and write to explain how it relates, how the system currently addresses the challenges(if it does at all), and how you might change the system to improve it with respect to the challenge.
+\appendix
+\chapter{First chapter in the appendix}
+
+\end{document}
